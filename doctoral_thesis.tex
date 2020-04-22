@@ -1,0 +1,115 @@
+% !TEX TS-program = xelatex
+% !TEX encoding = UTF-8 Unicode
+% !BIB TS-program = biber
+
+\documentclass{aprathesis}
+
+\university		{Pontifical Athenaeum Regina Apostolorum}
+\school		{School of Bioethics}
+\title			{Hello, World}
+\subtitle		{A Study in Greetings}
+\professor		{Dominic Farrell, L.C.}
+\author		{Louis Melahn, L.C.}
+\studentid		{3327}
+\coursenumber	{BIOETHICS}
+\coursename	{Dissertation for the Doctorate in Bioethics}
+\location		{Rome}
+\date			{\today}
+
+\usepackage{hyperxmp}
+
+\hypersetup{
+  pdftitle={Esse as Virtus Essendi},
+  pdfauthor={Louis Melahn},
+  pdfsubject={The metaphysics of action in the light of an intensive
+              actus essendi},
+  pdfkeywords={esse, actus essendi, virtus essendi, metaphysics,
+               Thomas Aquinas, Fabro, agere, operari, intensive},
+  pdfcopyright={Copyright (c) 2014, 2017 by Louis Melahn. This work is licensed
+                under the Creative Commons Attribution-NoDerivatives 4.0
+                International License. To view a copy of this license, visit
+                http://creativecommons.org/licenses/by-nd/4.0/.},
+  pdflicenseurl={http://creativecommons.org/licenses/by-nd/4.0/}
+}
+
+\usepackage{multirow}
+\usepackage{booktabs}
+
+\makepagestyle{normal}
+\makeevenhead{normal}{}{}{\thepage}
+\makeoddhead{normal}{}{}{\thepage}
+  
+\makeatother
+
+\setdefaultlanguage[variant=us]{english}
+\setotherlanguage[variant=ancient]{greek}
+
+% Work around old Greek commands
+\NewEnviron{greekQuotation}{\begin{quotation}\BODY\end{quotation}}
+\NewEnviron{greekQuote}{\begin{quote}\BODY\end{quote}}
+\newcommand\gk[1]{#1}
+
+% Makes sure no notes appear.
+\NewEnviron{NOTES}{}
+\NewEnviron{DONE}{}
+
+%\NewEnviron{onehalfspacing}{\BODY}
+
+% Makes “letters” appear as “numbers” for citations.
+\DeclareNumChars{ABCDE}
+\addbibresource{references/references.bib}
+
+% The following command makes it so that, if a bibliographic entry includes the pages
+% (because it is part of a larger work), those pages are suppressed. This is useful when
+% you are citing a classical work, and all you want in the footnote are the pages relevant
+% to the actual citation (but the pages for the entire work are needed in the bibliography).
+% \newcommand*\suppressPagesNextCite{\AtNextCitekey{\clearfield{pages}}}
+
+%%TODO:
+  % [DONE] Fix citations, so that they display the names as "F. Lastname"
+  %   (Right now, the entire first name is displayed.)
+  % [DONE (looks good for now)] See if I have forgotten to import any bibliography commands.
+  % [DONE] Remove bibliography subsections from TOC
+  % Add periods to bibliography TOC entry.
+  % [DONE (looks good for now)]See if \suppressPagesNextCite can be automated. (See scrapbook.)
+  % [DONE] Change monospaced font to proportional.
+  % [DONE] Convert "greekQuotation" environments to regular quotation environments.
+  % [DONE] Remove \gk commands
+  % [DONE] Convert `` and '' ligatures, as well as -- and ---, to unicode.
+  % [DONE] Chapter titles should be all caps.
+  % Chapter pages should have normal page numbers (page style).
+  % Chapter/section headings should be single spaced.
+  
+    %\counterwithout{section}{chapter}
+
+\begin{document}
+
+\maketitle
+
+\frontmatter
+\pagestyle{normal}
+
+\tableofcontents
+
+\mainmatter
+
+Hello, world!\footcite{st:summa}
+Hello, world, again!\footcite{ThomasAquinas.18881906}
+
+\input{tex/chapter-00}
+\input{tex/chapter-01}
+
+\backmatter
+
+\printbibheading[heading=bibintoc,title={Bibliography}]  %Adds heading to TOC.
+\printbibliography[keyword=primary,heading=subbibliography,%
+title={Primary Sources}]
+\printbibliography[keyword=direct,heading=subbibliography,%
+title={Sources of Direct Interest}]
+\printbibliography[notkeyword=encyclopedia, notkeyword=direct,%
+notkeyword=primary, heading=subbibliography,%
+title={Other Studies}]
+\printbibliography[keyword=encyclopedia,heading=subbibliography,%
+title={Encyclopedic Sources}]
+
+\end{document}
