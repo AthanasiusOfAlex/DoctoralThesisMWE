@@ -5,30 +5,25 @@
 \documentclass{aprathesis}
 
 \university		{Pontifical Athenaeum Regina Apostolorum}
-\school		{School of Bioethics}
+\school			{School of Bioethics}
 \title			{Hello, World}
 \subtitle		{A Study in Greetings}
-\professor		{Dominic Farrell, L.C.}
-\author		{Louis Melahn, L.C.}
-\studentid		{3327}
-\coursenumber	{BIOETHICS}
-\coursename	{Dissertation for the Doctorate in Bioethics}
+\professor		{Tim E.\ O’Day}
+\author			{Louis Melahn}
+\studentid		{1234}
+\coursenumber	{HELO 1230}
+\coursename		{Greetings and Goodbyes}
 \location		{Rome}
 \date			{\today}
 
 \usepackage{hyperxmp}
 
 \hypersetup{
-  pdftitle={Esse as Virtus Essendi},
-  pdfauthor={Louis Melahn},
-  pdfsubject={The metaphysics of action in the light of an intensive
-              actus essendi},
-  pdfkeywords={esse, actus essendi, virtus essendi, metaphysics,
-               Thomas Aquinas, Fabro, agere, operari, intensive},
-  pdfcopyright={Copyright (c) 2014, 2017 by Louis Melahn. This work is licensed
-                under the Creative Commons Attribution-NoDerivatives 4.0
-                International License. To view a copy of this license, visit
-                http://creativecommons.org/licenses/by-nd/4.0/.},
+  pdftitle={Hello, World},
+  pdfauthor={\theauthor},
+  pdfsubject={\thesubtitle},
+  pdfkeywords={hello, world, greetings},
+  pdfcopyright={Copyright (c) 2021 by Louis Melahn. This work is licensed under the Creative Commons Attribution-NoDerivatives 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nd/4.0/.},
   pdflicenseurl={http://creativecommons.org/licenses/by-nd/4.0/}
 }
 
@@ -43,11 +38,6 @@
 
 \setdefaultlanguage[variant=us]{english}
 \setotherlanguage[variant=ancient]{greek}
-
-% Work around old Greek commands
-\NewEnviron{greekQuotation}{\begin{quotation}\BODY\end{quotation}}
-\NewEnviron{greekQuote}{\begin{quote}\BODY\end{quote}}
-\newcommand\gk[1]{#1}
 
 % Makes sure no notes appear.
 \NewEnviron{NOTES}{}
@@ -99,14 +89,9 @@
 \backmatter
 
 \printbibheading[heading=bibintoc,title={Bibliography}]  %Adds heading to TOC.
-\printbibliography[keyword=primary,heading=subbibliography,%
-title={Primary Sources}]
-\printbibliography[keyword=direct,heading=subbibliography,%
-title={Sources of Direct Interest}]
-\printbibliography[notkeyword=encyclopedia, notkeyword=direct,%
-notkeyword=primary, heading=subbibliography,%
-title={Other Studies}]
-\printbibliography[keyword=encyclopedia,heading=subbibliography,%
-title={Encyclopedic Sources}]
+\printbibliography[keyword=primary,heading=subbibliography,title={Primary Sources}]
+\printbibliography[keyword=direct,heading=subbibliography,title={Sources of Direct Interest}]
+\printbibliography[notkeyword=encyclopedia, notkeyword=direct,notkeyword=primary, heading=subbibliography,title={Other Studies}]
+\printbibliography[keyword=encyclopedia,heading=subbibliography,title={Encyclopedic Sources}]
 
 \end{document}
